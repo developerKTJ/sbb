@@ -1,0 +1,196 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+  <!-- BADGES -->
+  <div class="hbadges">
+    <div class="hbadge">
+      <img th:src="@{/img/badge1.jpg}" alt="Badge">
+    </div>
+    <div class="hbadge">
+      <img th:src="@{/img/badge2.jpg}" alt="Badge">
+    </div>
+  </div>
+  <!-- VISUAL -->
+  <section class="visual">
+    <div class="inner">
+      <div class="title fade-in">
+        <img th:src="@{/img/visual_title.png}" alt="DELIGHTFUL START TO THE YEARS">
+        <a href="#" class="hbtn hbtn--brown">자세히 보기</a>
+      </div>
+      <div class="fade-in">
+        <img th:src="@{/img/visual_cup1.png}" alt="Cup1" class="cup1 image">
+        <img th:src="@{/img/visual_cup1_text.png}" alt="헤이즐넛 아메리카노" class="cup1 text">
+      </div>
+      <div class="fade-in">
+        <img th:src="@{/img/visual_cup2.png}" alt="Cup2" class="cup2 image">
+        <img th:src="@{/img/visual_cup2_text.png}" alt="헤이즐넛 아메리카노" class="cup2 text">
+      </div>
+      <div class="fade-in">
+        <img th:src="@{/img/visual_spoon.png}" alt="Spoon" class="spoon">
+      </div>
+    </div>
+  </section>
+  <!-- NOTICE -->
+  <section class="notice">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+    <div class="inner">
+      <div class="inner__left">
+        <h2>공지사항</h2>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <a href="#">크리스마스 & 연말연시 매장 영업시간 변경 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">가장 넓은 길은 언제나 마음속에</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">애플리케이션 버전 업데이트 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">[당첨자 발표] 전자영수증 이벤트</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="notice-more">
+          <span class="material-icons">add_circle</span>
+        </a>
+      </div>
+      <div class="inner__right">
+        <h2>커피 프로모션</h2>
+        <div class="toggle-promotion">
+          <div class="material-icons">upload</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PROMOTION -->
+  <section class="promotion">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img th:src="@{/img/promotion_slide1.jpg}" alt="온라인 샵 런칭 기념, 민트 초코브라우니 무료! 기간: 2023년 3월 3일 ~ 2023년 3월 31일">
+          <a href="#" class="hbtn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/img/promotion_slide2.jpg}" alt="뉴이어, 헤로피 커피와 함께 즐겁고 활기차게 시작하세요! 기간: 2023년 1월 1일 ~ 2월 14일">
+          <a href="#" class="hbtn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/img/promotion_slide3.jpg}" alt="따뜻한 아메리카노를 주문하면, 달콤한 초코칩 쿠기 1+1 기간: 2025년 12월 16일 하루만">
+          <a href="#" class="hbtn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/img/promotion_slide4.jpg}" alt="행사 기간동안 음료 주문시, 모든 디저트 80% 할인! 기간: 2023년 4월 1일 ~ 2024년 4월 1일">
+          <a href="#" class="hbtn">자세히 보기</a>
+        </div>
+        <div class="swiper-slide">
+          <img th:src="@{/img/promotion_slide5.jpg}" alt="골드 회원 가입시, 따뜻한 코코아를 무료로 드립니다. 기간: 2024년 1월 24일 ~ 1월 30일">
+          <a href="#" class="hbtn">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev">
+      <span class="material-icons">arrow_back</span>
+    </div>
+    <div class="swiper-button-next">
+      <span class="material-icons">arrow_forward</span>
+    </div>
+  </section>
+  <!-- REWARDS -->
+  <section class="rewards">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+    <div class="inner">
+      <div class="hbtn-group">
+        <div class="hbtn hbtn--reverse sign-up">회원가입</div>
+        <div class="hbtn sign-in">로그인</div>
+        <div class="hbtn gift">e-Gift 선물하기</div>
+      </div>
+    </div>
+  </section>
+  <!-- YOUTUBE VIDEO -->
+  <section class="youtube">
+    <div class="youtube__area">
+      <div id="player"></div>
+    </div>
+    <div class="youtube__cover"></div>
+    <div class="inner">
+      <img th:src="@{/img/floating1.png}" alt="Icon" class="floating1" >
+      <img th:src="@{/img/floating2.png}" alt="Icon" class="floating2" >
+    </div>
+  </section>
+  <!-- SEASON PRODUCT -->
+  <section class="season-product scroll-spy">
+    <div class="inner">
+      <img th:src="@{/img/floating3.png}" alt="Icon" class="floating3" >
+      <img th:src="@{/img/season_product_image.png}" alt="" class="product back-to-position to-right">
+      <div class="text-group">
+        <img th:src="@{/img/season_product_text1.png}" alt="" class="title back-to-position to-left delay-1">
+        <img th:src="@{/img/season_product_text2.png}" alt="" class="description back-to-position to-left delay-1">
+        <div class="more back-to-position to-left delay-3">
+          <a href="#" class="hbtn">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- RESERVE COFFEE -->
+  <section class="reserve-coffee scroll-spy">
+    <div class="inner">
+      <img th:src="@{/img/reserve_logo.png}" alt="" class="reserve-logo back-to-position to-right">
+      <div class="text-group">
+        <img th:src="@{/img/reserve_text.png}" alt="" class="dsecription back-to-position to-right delay-1">
+        <div class="more back-to-position to-right delay-2">
+          <a href="#" class="hbtn hbtn--gold">자세히 보기</a>
+        </div>
+      </div>
+      <img th:src="@{/img/reserve_image.png}" alt="" class="product back-to-position to-left delay-3">
+    </div>
+  </section>
+  <!-- PICK YOUR FAVORITE -->
+  <section class="pick-your-favorite scroll-spy">
+    <div class="inner">
+      <div class="text-group">
+        <img th:src="@{/img/favorite_text1.png}" alt="" class="title back-to-position to-right">
+        <img th:src="@{/img/favorite_text2.png}" alt="" class="description back-to-position to-right delay-1">
+        <div class="more back-to-position to-right delay-2">
+          <a href="#" class="hbtn hbtn--white">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- RESERVE STORE -->
+  <section class="reserve-store">
+    <div class="inner">
+      <div class="medal">
+        <div class="front">
+          <img th:src="@{/img/reserve_store_medal_front.png}" alt="">
+        </div>
+        <div class="back">
+          <img th:src="@{/img/reserve_store_medal_back.png}" alt="">
+          <a href="#" class="hbtn">매장안내</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIND THE STORE -->
+  <section class="find-store scroll-spy">
+    <div class="inner">
+      <img th:src="@{/img/find_store_texture1.png}" alt="" class="texture1">
+      <img th:src="@{/img/find_store_texture2.png}" alt="" class="texture2">
+      <img th:src="@{/img/find_store_picture1.jpg}" alt="" class="picture1 back-to-position to-right">
+      <img th:src="@{/img/find_store_picture2.jpg}" alt="" class="picture2 back-to-position to-right delay-1">
+      <div class="text-group">
+        <img th:src="@{/img/find_store_text1.png}" alt="" class="title back-to-position to-left">
+        <img th:src="@{/img/find_store_text2.png}" alt="" class="description back-to-position to-left delay-1">
+        <div class="more back-to-position to-left delay-2">
+          <a href="#" class="hbtn">매장찾기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</html>	

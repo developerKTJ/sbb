@@ -1,0 +1,58 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+	
+  <div class="sub_tit_wrap mb-3">
+    <div class="sub_tit_inner">
+      <h2>질문 상세</h2>
+      <ul class="smap">
+        <li><a href="/"><img th:src="@{/img/icon_home.png}" alt="홈으로"></a></li>
+        <li><img class="arrow" th:src="@{/img/icon_arrow.png}" alt="하위메뉴"></li>
+        <li class="en"><a href="/question/list" class="subHeadMnu1">Q & A</a></li>
+        <li><img class="arrow" th:src="@{/img/icon_arrow.png}" alt="하위메뉴"></li>
+        <li><a href="javascript:void(0)" class="subHeadMnu2">질문 상세</a></li>
+      </ul>
+    </div>
+  </div>
+	
+    <!-- 질문 -->
+    <h3 class="border-bottom py-2" th:text="'Q ' + ${question.subject}"></h3>
+    <div class="card my-3">
+        <div class="card-body">
+			<div class="card-text" th:utext="${@commonUtil.markdown(question.content)}"></div>
+            <div class="d-flex justify-content-end">
+                <div class="badge bg-light text-dark p-2 text-start">
+                	<div class="mb-2">
+                    	<span th:if="${question.author != null}" th:text="${question.author.username}"></span>
+                	</div>
+                    <div th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 답변의 갯수 표시 -->
+    <h5 class="border-bottom my-3 py-2" 
+        th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></h5>
+    <!-- 답변 반복 시작 -->
+    <div class="card my-3" th:each="answer : ${question.answerList}">
+        <div class="card-body">
+            <div class="card-text" th:utext="${@commonUtil.markdown(answer.content)}"></div>
+            <div class="d-flex justify-content-end">
+                <div class="badge bg-light text-dark p-2 text-start">
+					<div class="mb-2">
+                    	<span th:if="${answer.author != null}" th:text="${answer.author.username}"></span>
+                	</div>
+                    <div th:text="${#temporals.format(answer.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 답변 반복 끝  -->
+    <!-- 답변 작성 -->
+    <form th:action="@{|/answer/create/${question.id}|}" th:object="${answerForm}" method="post" class="my-3">
+		<div th:replace="~{form_errors :: formErrorsFragment}"></div>
+        <textarea sec:authorize="isAnonymous()" disabled th:field="*{content}" class="form-control" rows="10"></textarea>
+        <textarea sec:authorize="isAuthenticated()" th:field="*{content}" class="form-control" rows="10"></textarea>
+        <input type="submit" value="답변등록" class="btn btn-warning my-2"><a href="/question/list" class="btn btn-warning my-2 ms-2">목록보기</a>
+    </form>
+</div>
+</html>

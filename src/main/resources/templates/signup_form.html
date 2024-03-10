@@ -1,0 +1,38 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container"> 
+ 	
+  <div class="sub_tit_wrap mb-3 mb-3 border-bottom pb-2">
+    <div class="sub_tit_inner">
+      <h2>회원 가입</h2>
+      <ul class="smap">
+        <li><a href="/"><img th:src="@{/img/icon_home.png}" alt="홈으로"></a></li>
+        <li><img class="arrow" th:src="@{/img/icon_arrow.png}" alt="하위메뉴"></li>
+        <li class="en"><a href="/signin" class="subHeadMnu1">sign in</a></li>
+        <li><img class="arrow" th:src="@{/img/icon_arrow.png}" alt="하위메뉴"></li>
+        <li><a href="javascript:void(0)" class="subHeadMnu2">회원 가입</a></li>
+      </ul>
+    </div>
+  </div>
+		
+		    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+		        <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+		        <div class="mb-3">
+		            <label for="username" class="form-label">사용자ID</label>
+		            <input type="text" th:field="*{username}" class="form-control">
+		        </div>
+		        <div class="mb-3">
+		            <label for="password1" class="form-label">비밀번호</label>
+		            <input type="password" th:field="*{password1}" class="form-control">
+		        </div>
+		        <div class="mb-3">
+		            <label for="password2" class="form-label">비밀번호 확인</label>
+		            <input type="password" th:field="*{password2}" class="form-control">
+		        </div>
+		        <div class="mb-3">
+		            <label for="email" class="form-label">이메일</label>
+		            <input type="email" th:field="*{email}" class="form-control">
+		        </div>
+		        <button type="submit" class="btn btn-warning mb-4">회원가입</button>
+		    </form>
+</div>
+</html>

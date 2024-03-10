@@ -1,0 +1,50 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+		    
+  <div class="login_wrap">
+    <div class="login inner">
+      <div class="form-wrap">
+        <form id="login-form" th:action="@{/user/login}" method="post">
+          <fieldset>
+            <strong class="login-tit">로그인</strong>
+            <section class="joinform">
+              <p class="form_txt">
+                <span class="acc">Welcome!</span> Heropy Coffee에 오신 것을 환영합니다.
+              </p> 
+              <div class="input_box">
+                <div th:if="${param.error}">
+            	  <div class="alert alert-danger">
+                	사용자ID 또는 비밀번호를 확인해 주세요.
+            	  </div>
+        		</div>
+                <input class="login_id mb10" id="txt_user_id" name="username" type="text" maxlength="20" placeholder="아이디를 입력해 주세요." required="required">
+                <p class="limit_txt user_id_txt"></p>
+                <input class="login_pw mb10" id="txt_user_pwd" name="password" type="password" maxlength="20" placeholder="비밀번호를 입력해 주세요." required="required" autocomplete="off">
+                <p class="limit_txt user_pwd_txt"></p>
+                <span class="checkWrap">
+                  <input type="checkbox" id="idRemb" class="mem2">
+                  <label for="idRemb">아이디 저장</label>
+                </span>
+                <p class="btn_mem_login block">
+                  <a class="btn_login" href="javascript:void(0);" role="submit">로그인</a>
+                </p>
+                <p class="input_warn_text">
+                  * 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.
+                </p>
+              </div>
+              <div class="login_btn_wrap">
+                <ul>
+                  <li><a href="/user/signup">회원가입</a></li>
+                  <li><a href="#">아이디 찾기</a></li>
+                  <li class="last"><a href="#">비밀번호 찾기</a></li>
+                </ul>
+              </div>
+            </section>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+		    
+</div>
+</html>
